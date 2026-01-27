@@ -1,0 +1,42 @@
+# Aggressive Staking Strategy
+# Maximizes returns by focusing on high-emission neurons
+
+name: aggressive
+description: "Aggressive strategy maximizing emission-based returns"
+
+# Scoring weights (higher = more important)
+weights:
+  emission: 2.0         # High weight on emissions (maximize returns)
+  trust: 0.5            # Lower weight on trust (more risk tolerance)
+  validator_bonus: 0.2  # Small bonus for validators
+
+# Filters to exclude neurons
+filters:
+  min_stake: 10.0       # Lower minimum stake threshold
+  max_stake: 50000.0    # Higher max stake (more concentration allowed)
+  exclude_immune: false # Include immune neurons (early opportunities)
+  exclude_duplicate_ip: false  # Allow duplicate IPs
+  min_trust: 0.05       # Lower minimum trust
+  min_emission: 0.001   # Minimum emission threshold
+
+# Allocation settings
+max_targets: 10         # More targets for diversification
+min_stake_per_target: 5.0    # Lower minimum per target
+max_stake_per_target: 2000.0 # Higher maximum per target
+allocation_method: proportional  # Proportional to scores
+top_n_count: 5          # If allocation_method is top_n
+
+# Rebalancing
+rebalance_threshold: 0.20  # Rebalance if allocation drifts >20%
+rebalance_interval_blocks: 1000  # More frequent rebalancing
+
+# APY and Risk Preferences
+min_apy_7d: 10.0         # Minimum 7-day APY (%) to consider (higher for aggressive)
+min_apy_30d: 8.0          # Minimum 30-day APY (%) to consider
+max_risk_score: 0.8      # Higher risk tolerance (0-1)
+exclude_risk_flags:      # Risk flags that exclude a neuron (fewer exclusions)
+  - very_low_validator_count
+
+# Safety
+max_total_stake_ratio: 0.9  # Can stake up to 90% of balance
+require_confirmation: false  # Auto-execute (use with caution!)

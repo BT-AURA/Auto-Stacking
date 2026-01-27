@@ -1,0 +1,43 @@
+# Conservative Staking Strategy
+# Focuses on established validators with high trust scores
+
+name: conservative
+description: "Conservative strategy focusing on high-trust validators"
+
+# Scoring weights (higher = more important)
+weights:
+  emission: 0.3      # Lower weight on emissions (less risky)
+  trust: 1.5         # Higher weight on trust (safety first)
+  validator_bonus: 0.5  # Bonus for validators
+
+# Filters to exclude neurons
+filters:
+  min_stake: 100.0      # Minimum existing stake to consider
+  max_stake: 10000.0    # Maximum stake to avoid concentration
+  exclude_immune: false  # Include immune neurons
+  exclude_duplicate_ip: true  # Exclude duplicate IPs
+  min_trust: 0.1        # Minimum trust score
+  min_emission: 0.0     # Minimum emission
+
+# Allocation settings
+max_targets: 5          # Maximum number of targets to stake
+min_stake_per_target: 10.0   # Minimum TAO per target
+max_stake_per_target: 500.0  # Maximum TAO per target
+allocation_method: equal  # equal, proportional, or top_n
+top_n_count: 3          # If allocation_method is top_n
+
+# Rebalancing
+rebalance_threshold: 0.15  # Rebalance if allocation drifts >15%
+rebalance_interval_blocks: 2000  # Minimum blocks between rebalances
+
+# APY and Risk Preferences
+min_apy_7d: 5.0          # Minimum 7-day APY (%) to consider
+min_apy_30d: 4.0         # Minimum 30-day APY (%) to consider
+max_risk_score: 0.5      # Maximum risk score (0-1) to accept
+exclude_risk_flags:      # Risk flags that exclude a neuron
+  - very_low_validator_count
+  - very_low_trust
+
+# Safety
+max_total_stake_ratio: 0.8  # Never stake more than 80% of balance
+require_confirmation: true  # Require user confirmation for each stake
